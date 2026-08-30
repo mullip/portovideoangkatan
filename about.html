@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tentang Kami — Mulae Production</title>
+<meta name="description" content="Mengenal Mulae Production, vendor dokumentasi kreatif untuk wedding, event, video angkatan, company profile, dan kebutuhan produksi visual lainnya.">
+
+<style>
+:root{
+  --black:#090909;
+  --ink:#141414;
+  --gray-900:#1d1d1d;
+  --gray-700:#4e4e4e;
+  --gray-500:#8b8b8b;
+  --gray-300:#d8d8d8;
+  --gray-200:#e9e9e9;
+  --gray-100:#f5f5f3;
+  --white:#ffffff;
+  --green:#4f6f52;
+  --green-soft:#dfe8df;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+/* NAVBAR */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  height:78px;
+  display:flex;
+  align-items:center;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(20,20,20,.08);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-.065em;
+}
+.logo small{
+  display:block;
+  margin-top:-4px;
+  font-size:8px;
+  letter-spacing:.24em;
+}
+.nav-links{
+  display:flex;
+  gap:30px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.nav-links a{
+  position:relative;
+  color:var(--gray-700);
+}
+.nav-links a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:var(--black);
+  transition:.3s ease;
+}
+.nav-links a:hover:after{width:100%}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:13px 18px;
+  border-radius:999px;
+  border:1px solid var(--black);
+  font-size:12px;
+  font-weight:800;
+  transition:.3s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+}
+.btn-dark{
+  background:var(--black);
+  color:var(--white);
+}
+.btn-dark:hover{
+  background:var(--green);
+  border-color:var(--green);
+}
+.btn-light{
+  background:var(--white);
+  color:var(--black);
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  padding:110px 0 80px;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:72px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--gray-700);
+  text-transform:uppercase;
+}
+.eyebrow:before{
+  content:"";
+  width:34px;
+  height:1px;
+  background:var(--green);
+}
+.hero h1{
+  margin:20px 0 26px;
+  font-size:clamp(56px,7vw,96px);
+  line-height:.91;
+  letter-spacing:-.075em;
+  font-weight:850;
+}
+.hero h1 span{
+  color:var(--green);
+}
+.lead{
+  max-width:690px;
+  margin:0 0 30px;
+  color:var(--gray-700);
+  font-size:18px;
+  line-height:1.8;
+}
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.hero-visual{
+  position:relative;
+}
+.hero-photo{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  background:var(--gray-100);
+}
+.hero-photo img{
+  width:100%;
+  height:590px;
+  object-fit:cover;
+  filter:grayscale(100%);
+  transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .6s ease;
+}
+.hero-photo:hover img{
+  transform:scale(1.03);
+  filter:grayscale(35%);
+}
+.hero-note{
+  position:absolute;
+  left:-26px;
+  bottom:28px;
+  width:220px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px);
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+}
+.hero-note strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:12px;
+}
+.hero-note span{
+  color:var(--gray-500);
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* GENERIC */
+.section{
+  padding:110px 0;
+}
+.section.soft{
+  background:var(--gray-100);
+}
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:48px;
+}
+.section-head h2,
+.story h2,
+.cta h2{
+  margin:0;
+  font-size:clamp(42px,5vw,68px);
+  line-height:.95;
+  letter-spacing:-.06em;
+}
+.section-head p{
+  max-width:500px;
+  margin:0;
+  color:var(--gray-700);
+  line-height:1.8;
+}
+
+/* STORY */
+.story{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:84px;
+}
+.story-copy p{
+  margin:0 0 22px;
+  color:var(--gray-700);
+  font-size:16px;
+  line-height:1.92;
+}
+.principles{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:52px;
+}
+.card{
+  position:relative;
+  padding:28px;
+  min-height:220px;
+  border:1px solid var(--gray-200);
+  border-radius:22px;
+  background:var(--white);
+  transition:.35s ease;
+  overflow:hidden;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:var(--green);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.35s ease;
+}
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 22px 45px rgba(0,0,0,.07);
+}
+.card:hover:before{transform:scaleX(1)}
+.card .num{
+  display:block;
+  margin-bottom:48px;
+  color:var(--gray-500);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+.card b{
+  display:block;
+  margin-bottom:10px;
+  font-size:18px;
+}
+.card p{
+  margin:0;
+  color:var(--gray-700);
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* FACTS */
+.facts{
+  padding:56px 0;
+  background:var(--black);
+  color:var(--white);
+}
+.facts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.fact{
+  padding-right:20px;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+.fact:last-child{border-right:0}
+.fact span{
+  display:block;
+  margin-bottom:9px;
+  color:#9b9b9b;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.fact strong{
+  font-size:15px;
+  line-height:1.6;
+  font-weight:600;
+}
+.fact .accent{color:#9fbea1}
+
+/* BTS */
+.gallery{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  grid-template-rows:320px 320px;
+  gap:14px;
+}
+.shot{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  background:#ddd;
+}
+.shot:first-child{grid-row:1/3}
+.shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(100%);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s ease;
+}
+.shot:hover img{
+  transform:scale(1.04);
+  filter:grayscale(0);
+}
+.shot:after{
+  content:"BTS";
+  position:absolute;
+  left:18px;
+  bottom:16px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,.68);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+  backdrop-filter:blur(8px);
+}
+.mini-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+.mini-grid .shot{height:260px}
+
+/* CTA */
+.cta{
+  padding:115px 0;
+  text-align:center;
+}
+.cta p{
+  max-width:640px;
+  margin:20px auto 30px;
+  color:var(--gray-700);
+  line-height:1.8;
+}
+.cta .btn{
+  padding:15px 22px;
+}
+
+/* FOOTER */
+.footer{
+  padding:36px 0;
+  background:var(--black);
+  color:#aaa;
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  font-size:12px;
+}
+
+/* ANIMATIONS */
+.reveal{
+  opacity:0;
+  transform:translateY(26px);
+}
+.reveal.show{
+  animation:reveal .8s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.reveal.delay-1{animation-delay:.08s}
+.reveal.delay-2{animation-delay:.16s}
+.reveal.delay-3{animation-delay:.24s}
+@keyframes reveal{
+  to{opacity:1;transform:translateY(0)}
+}
+.hero-photo:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.18) 45%,transparent 70%);
+  transform:translateX(-120%);
+  animation:shine 5.5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes shine{
+  0%,55%{transform:translateX(-120%)}
+  75%,100%{transform:translateX(120%)}
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-grid,.story{grid-template-columns:1fr}
+  .hero{padding-top:70px}
+  .hero-photo img{height:500px}
+  .hero-note{left:18px}
+  .principles,.facts-grid{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr;grid-template-rows:auto}
+  .shot:first-child{grid-row:auto}
+  .gallery .shot{height:340px}
+  .section-head{display:block}
+  .section-head p{margin-top:18px}
+  .footer-inner{display:block;line-height:2}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 26px,1180px)}
+  .hero h1{font-size:56px}
+  .hero-photo img{height:390px}
+  .hero-note{position:static;width:auto;margin-top:12px}
+  .principles,.facts-grid,.mini-grid{grid-template-columns:1fr}
+  .fact{border-right:0;border-bottom:1px solid rgba(255,255,255,.12);padding:0 0 18px}
+  .gallery .shot,.mini-grid .shot{height:270px}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">Mulae.<small>PRODUCTION</small></a>
+
+    <div class="nav-links">
+      <a href="index.html">BERANDA</a>
+      <a href="https://drive.google.com/drive/folders/1i0joGkdx3FF3HUMSv0ao4Oc3gzm9OoI2?usp=drive_link" target="_blank" rel="noopener noreferrer">PORTOFOLIO</a>
+      <a href="about.html">TENTANG KAMI</a>
+      <a href="#kontak">KONTAK</a>
+    </div>
+
+    <a class="btn btn-dark" href="https://api.whatsapp.com/send/?phone=6285850193563&text=Halo%20Mulae%20Production%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20dokumentasi.">
+      HUBUNGI KAMI
+    </a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow reveal">Tentang Mulae Production</div>
+
+      <h1 class="reveal delay-1">
+        Kami tidak sekadar merekam.
+        Kami <span>menjaga cerita.</span>
+      </h1>
+
+      <p class="lead reveal delay-2">
+        Mulae Production adalah vendor dokumentasi kreatif yang membantu mengubah momen,
+        brief, dan gagasan klien menjadi karya visual yang terarah, relevan, dan dapat
+        terus dikenang.
+      </p>
+
+      <div class="hero-actions reveal delay-3">
+        <a class="btn btn-dark" href="#cerita">MENGENAL KAMI</a>
+        <a class="btn btn-light" href="https://drive.google.com/drive/folders/1i0joGkdx3FF3HUMSv0ao4Oc3gzm9OoI2?usp=drive_link" target="_blank" rel="noopener noreferrer">LIHAT PORTOFOLIO</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal delay-2">
+      <div class="hero-photo">
+        <img src="assets/bts/bts-01.jpg" alt="Behind the scene produksi Mulae Production">
+      </div>
+      <div class="hero-note">
+        <strong>Built from brief.</strong>
+        <span>Setiap produksi dimulai dari memahami tujuan, karakter, dan pesan yang ingin disampaikan.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="cerita">
+  <div class="container">
+    <div class="story">
+      <div class="reveal">
+        <div class="eyebrow">Cara Kami Bekerja</div>
+        <h2>Brief menjadi arah. Cerita menjadi hasil.</h2>
+      </div>
+
+      <div class="story-copy reveal delay-1">
+        <p>
+          Mulae Production menangani berbagai kebutuhan dokumentasi dan produksi visual,
+          mulai dari wedding, event, video angkatan, company profile, hingga proyek foto
+          dan video lainnya.
+        </p>
+
+        <p>
+          Kami percaya bahwa visual yang baik bukan hanya menarik untuk dilihat, tetapi juga
+          harus memiliki tujuan. Karena itu, setiap proyek kami mulai dengan memahami brief,
+          karakter acara, target audiens, dan pesan utama yang ingin disampaikan klien.
+        </p>
+
+        <p>
+          Proses kreatif kami dirancang dengan hati-hati—mulai dari pengembangan konsep,
+          persiapan produksi, pengambilan gambar, hingga tahap penyuntingan akhir. Pendekatan
+          ini membantu kami menjaga agar setiap keputusan visual tetap relevan dengan kebutuhan
+          klien tanpa kehilangan identitas dan kualitas produksi.
+        </p>
+
+        <p>
+          Didirikan secara mandiri pada 2 Juni 2025, Mulae Production terus berkembang melalui
+          pengalaman produksi, kolaborasi, dan kepercayaan klien. Bagi kami, setiap proyek
+          adalah kesempatan untuk menciptakan arsip visual yang memiliki nilai dan dapat terus
+          dikenang.
+        </p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="card reveal">
+        <span class="num">01</span>
+        <b>Berangkat dari Brief</b>
+        <p>Kami memahami kebutuhan dan tujuan klien sebelum menentukan pendekatan visual dan konsep produksi.</p>
+      </div>
+
+      <div class="card reveal delay-1">
+        <span class="num">02</span>
+        <b>Konsep yang Terarah</b>
+        <p>Setiap adegan, shot, audio, dan penyuntingan dibuat untuk mendukung cerita serta pesan utama.</p>
+      </div>
+
+      <div class="card reveal delay-2">
+        <span class="num">03</span>
+        <b>Detail dalam Produksi</b>
+        <p>Kami menjaga proses dari tahap persiapan hingga pascaproduksi agar hasil akhir tetap konsisten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="container facts-grid">
+    <div class="fact reveal">
+      <span>DIDIRIKAN</span>
+      <strong>02 Juni 2025</strong>
+    </div>
+    <div class="fact reveal delay-1">
+      <span>BERBASIS DI</span>
+      <strong>Jl. Raya Solo KM 05<br>Watualang, Ngawi</strong>
+    </div>
+    <div class="fact reveal delay-2">
+      <span>LAYANAN</span>
+      <strong>Wedding · Event · Video Angkatan · Company Profile</strong>
+    </div>
+    <div class="fact reveal delay-3">
+      <span>EMAIL</span>
+      <strong class="accent">musduakh@gmail.com</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <div class="eyebrow">Behind The Scenes</div>
+        <h2>Di balik setiap frame.</h2>
+      </div>
+
+      <p class="reveal delay-1">
+        Proses produksi adalah bagian penting dari setiap karya kami. Mulai dari directing,
+        koordinasi kru, pengambilan gambar, sampai memastikan detail kecil tetap sesuai konsep.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <div class="shot reveal">
+        <img src="assets/bts/bts-02.jpg" alt="Tim Mulae Production saat proses shooting">
+      </div>
+      <div class="shot reveal delay-1">
+        <img src="assets/bts/bts-03.jpg" alt="Behind the scene video angkatan">
+      </div>
+      <div class="shot reveal delay-2">
+        <img src="assets/bts/bts-04.jpg" alt="Tim produksi Mulae Production">
+      </div>
+    </div>
+
+    <div class="mini-grid">
+      <div class="shot reveal">
+        <img src="assets/bts/bts-01.jpg" alt="Videografer Mulae Production">
+      </div>
+      <div class="shot reveal delay-1">
+        <img src="assets/bts/bts-03.jpg" alt="Suasana produksi Mulae Production">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="kontak">
+  <div class="container">
+    <div class="eyebrow reveal">Start a Project</div>
+    <h2 class="reveal delay-1">Punya cerita yang ingin<br>kami dokumentasikan?</h2>
+    <p class="reveal delay-2">
+      Ceritakan kebutuhan produksimu. Kami siap berdiskusi dari tahap ide,
+      pengembangan konsep, hingga eksekusi.
+    </p>
+    <a class="btn btn-dark reveal delay-3" href="https://api.whatsapp.com/send/?phone=6285850193563&text=Halo%20Mulae%20Production%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20dokumentasi.">
+      KONSULTASI DENGAN MULAE
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 Mulae Production. All Rights Reserved.</div>
+    <div>Watualang, Ngawi · musduakh@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

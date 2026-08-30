@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mulae Production — Video Angkatan</title>
+<meta name="description" content="Portofolio video dan foto angkatan Mulae Production." />
+<style>
+:root{
+  --white:#ffffff;
+  --blue:#103a84;
+  --blue2:#0b244f;
+  --black:#07111f;
+  --red:#ef3340;
+  --soft:#f7f9fc;
+  --line:#dce3ee;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--black);
+  background:var(--white);
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1160px,calc(100% - 36px));margin:auto}
+.nav{
+  position:fixed;inset:0 0 auto 0;height:78px;z-index:100;
+  display:flex;align-items:center;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(220,227,238,.75);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:950;letter-spacing:-.07em;font-size:28px}
+.logo small{display:block;font-size:8px;letter-spacing:.22em;margin-top:-4px}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:26px;font-size:12px;font-weight:900;letter-spacing:.06em}
+.nav-links a{position:relative}
+.nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--red);transition:.25s}
+.nav-links a:hover:after{right:0}
+.btn{
+  border:0;border-radius:12px;padding:14px 20px;font-weight:900;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;transition:.25s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 24px rgba(239,51,64,.25)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.hero{
+  min-height:830px;padding:150px 0 110px;color:#fff;position:relative;overflow:hidden;
+  background:
+    linear-gradient(rgba(8,22,45,.95),rgba(8,22,45,.96)),
+    radial-gradient(circle at 70% 30%,rgba(33,87,173,.55),transparent 38%);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;left:-5%;width:110%;height:80px;background:#fff;z-index:5;
+  clip-path:polygon(0 55%,6% 72%,14% 46%,21% 68%,30% 47%,40% 70%,50% 50%,59% 68%,67% 52%,76% 69%,86% 44%,95% 64%,100% 45%,100% 100%,0 100%);
+}
+.hero:before{top:-1px;transform:rotate(180deg)}
+.hero:after{bottom:-1px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:50px;position:relative;z-index:10}
+.kicker{font-size:13px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+.kicker span{color:var(--red)}
+h1{font-size:clamp(56px,7vw,96px);line-height:.9;letter-spacing:-.075em;margin:0;max-width:680px}
+h1 .script{font-style:italic;color:#3f7ff0;display:block;font-family:"Trebuchet MS",cursive;transform:rotate(-3deg);margin:8px 0}
+.hero p{color:#d3dbea;line-height:1.72;max-width:560px;font-size:17px;margin:28px 0}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{
+  position:relative;margin-left:auto;width:min(560px,100%);aspect-ratio:1.16/1;
+  background:#fff;border-radius:8px;padding:12px;transform:rotate(5deg);
+  box-shadow:0 35px 70px rgba(0,0,0,.35);
+}
+.hero-screen{
+  position:relative;width:100%;height:100%;overflow:hidden;border-radius:3px;
+  background:
+    linear-gradient(rgba(12,24,42,.15),rgba(12,24,42,.5)),
+    radial-gradient(circle at 70% 55%,#f8a55a 0 5%,transparent 6%),
+    linear-gradient(180deg,#e1a36d,#44536c 48%,#09101b 49%);
+}
+.hero-screen:after{
+  content:"";position:absolute;left:10%;right:10%;bottom:13%;height:26%;
+  background:
+   radial-gradient(circle at 10% 80%,#09101b 0 17%,transparent 18%),
+   radial-gradient(circle at 28% 65%,#09101b 0 18%,transparent 19%),
+   radial-gradient(circle at 47% 78%,#09101b 0 20%,transparent 21%),
+   radial-gradient(circle at 66% 62%,#09101b 0 18%,transparent 19%),
+   radial-gradient(circle at 85% 75%,#09101b 0 19%,transparent 20%);
+}
+.play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:72px;height:72px;border:4px solid #fff;border-radius:50%;display:grid;place-items:center;z-index:3;
+}
+.play:after{content:"";margin-left:5px;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+.sticker{position:absolute;z-index:15;pointer-events:none;filter:drop-shadow(0 15px 12px rgba(0,0,0,.18))}
+.sticker.float{animation:float 4.4s ease-in-out infinite}
+.sticker.float2{animation:float2 5.8s ease-in-out infinite}
+.sticker.pop{animation:pop 3.8s ease-in-out infinite}
+.s-a{width:145px;left:-34px;top:-40px}
+.s-b{width:180px;right:-52px;top:-35px}
+.s-c{width:165px;right:-56px;bottom:36px}
+.s-d{width:180px;left:-65px;bottom:-38px}
+.s-e{width:185px;left:28%;bottom:-95px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(15px) rotate(-4deg)}}
+@keyframes pop{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.08) rotate(3deg)}}
+.section{padding:105px 0;position:relative}
+.section-title{text-align:center;margin-bottom:42px}
+.badge{
+  display:inline-block;background:#dce9ff;color:var(--blue);padding:6px 12px;border-radius:99px;
+  font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase
+}
+.section-title h2{font-size:clamp(42px,5vw,68px);line-height:.95;letter-spacing:-.065em;margin:14px 0 12px}
+.section-title h2 em{font-family:"Trebuchet MS",cursive;font-weight:900;color:var(--blue)}
+.section-title p{color:#667085}
+.video-stage{position:relative}
+.video-track{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.video-card{
+  background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 16px 35px rgba(11,35,79,.08);transition:.32s;cursor:pointer;
+}
+.video-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 22px 45px rgba(11,35,79,.15)}
+.thumb{
+  height:240px;position:relative;overflow:hidden;
+  background:
+   linear-gradient(135deg,rgba(7,17,31,.15),rgba(7,17,31,.55)),
+   linear-gradient(125deg,#a7c8ff,#1d4f9e 52%,#09111d);
+}
+.thumb.t2{background:linear-gradient(145deg,#f2a75e,#233f6a 52%,#101826)}
+.thumb.t3{background:linear-gradient(145deg,#d3e0ef,#244f98 55%,#ec3941)}
+.thumb:after{
+  content:"";position:absolute;left:8%;right:8%;bottom:18%;height:22%;
+  background:
+   radial-gradient(circle at 10% 80%,rgba(255,255,255,.95) 0 12%,transparent 13%),
+   radial-gradient(circle at 30% 55%,rgba(255,255,255,.95) 0 13%,transparent 14%),
+   radial-gradient(circle at 52% 72%,rgba(255,255,255,.95) 0 12%,transparent 13%),
+   radial-gradient(circle at 74% 52%,rgba(255,255,255,.95) 0 13%,transparent 14%),
+   radial-gradient(circle at 91% 72%,rgba(255,255,255,.95) 0 11%,transparent 12%);
+  opacity:.85
+}
+.thumb .play2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border:3px solid #fff;border-radius:50%;z-index:2}
+.thumb .play2:after{content:"";position:absolute;left:23px;top:17px;border-left:14px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.video-info{padding:20px}
+.video-info h3{margin:0 0 7px;font-size:20px;letter-spacing:-.03em}
+.video-info p{margin:0;color:#6f7888;font-size:13px}
+.slider-stickers .left{position:absolute;left:-10px;bottom:-65px;width:150px}
+.slider-stickers .right{position:absolute;right:-10px;bottom:-70px;width:150px}
+.photo-section{
+  color:#fff;background:linear-gradient(180deg,#113d88,#0b285f);
+  overflow:hidden;
+}
+.photo-section:before,.photo-section:after{
+  content:"";position:absolute;left:-3%;width:106%;height:55px;background:#fff;z-index:2;
+  clip-path:polygon(0 65%,10% 35%,20% 70%,30% 42%,40% 72%,50% 45%,60% 68%,70% 36%,80% 70%,90% 42%,100% 65%,100% 100%,0 100%);
+}
+.photo-section:before{top:-1px;transform:rotate(180deg)}
+.photo-section:after{bottom:-1px}
+.photo-section .section-title h2 em{color:var(--red)}
+.photo-slider{position:relative;z-index:3}
+.photo-frame{
+  overflow:hidden;border-radius:22px;border:1px solid rgba(255,255,255,.28);
+  background:#07111f;padding:12px;
+}
+.photo-track{display:flex;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.photo-slide{min-width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
+.photo-main,.photo-side{min-height:430px;border-radius:14px;position:relative;overflow:hidden}
+.photo-main{background:linear-gradient(145deg,#f5b261,#1f4f96 55%,#0b1320)}
+.photo-side{background:linear-gradient(145deg,#dce7f6,#ef3340 55%,#0d2f70)}
+.photo-main:after,.photo-side:after{
+  content:"PORTFOLIO FOTO";position:absolute;inset:auto 22px 20px 22px;color:#fff;font-weight:950;letter-spacing:.08em;font-size:12px
+}
+.photo-counter{text-align:center;margin-top:18px;font-weight:950;letter-spacing:.12em}
+.slider-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:8;width:48px;height:48px;border-radius:50%;
+  border:none;background:var(--red);color:#fff;font-weight:900;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.25)
+}
+.slider-btn.prev{left:-24px}.slider-btn.next{right:-24px}
+.cta{
+  padding:110px 0 95px;background:var(--white);position:relative;overflow:hidden;
+}
+.cta-inner{display:grid;grid-template-columns:.6fr 1.2fr .8fr;align-items:end;gap:25px}
+.cta-copy{text-align:center}
+.cta-copy h2{font-size:46px;line-height:1;letter-spacing:-.055em;margin:0}
+.cta-copy h2 span{display:block;color:var(--red);font-family:"Trebuchet MS",cursive;font-style:italic;margin-top:10px}
+.cta-copy p{color:#6d7686;line-height:1.7}
+.cta .decor-left{width:240px;justify-self:start}
+.cta .decor-right{width:300px;justify-self:end}
+.footer{background:var(--blue2);color:#c9d3e1;padding:46px 0 18px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr 1fr;gap:35px}
+.footer h4{margin:0 0 12px;color:#fff}
+.footer p,.footer a{font-size:13px;line-height:1.8}
+.copyright{margin-top:35px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:12px}
+.reveal{opacity:0;transform:translateY(25px)}
+.reveal.show{animation:reveal .7s ease forwards}
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero{padding-top:130px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-card{margin:30px auto 0}
+  .video-track{grid-template-columns:1fr 1fr}
+  .video-card:last-child{grid-column:1/-1}
+  .photo-slide{grid-template-columns:1fr}.photo-side{min-height:260px}.photo-main{min-height:350px}
+  .cta-inner{grid-template-columns:1fr}.cta .decor-left,.cta .decor-right{width:180px;justify-self:center}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .container{width:min(100% - 24px,1160px)}
+  .hero{min-height:auto}
+  h1{font-size:56px}
+  .hero-card{width:90%}
+  .video-track{grid-template-columns:1fr}
+  .video-card:last-child{grid-column:auto}
+  .slider-stickers{display:none}
+  .slider-btn.prev{left:8px}.slider-btn.next{right:8px}
+  .cta-copy h2{font-size:38px}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* ===== SPLASH SCREEN MULAE ===== */
+body.is-loading{overflow:hidden;}
+#mulae-splash{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--black);
+  transition:opacity .75s ease,visibility .75s ease;
+}
+#mulae-splash.hide{opacity:0;visibility:hidden;pointer-events:none;}
+#mulae-splash .splash-inner{
+  display:flex;flex-direction:column;align-items:center;gap:22px;
+}
+#mulae-splash img{
+  width:min(245px,54vw);height:auto;opacity:0;transform:scale(.82);
+  animation:splashLogo 1.2s cubic-bezier(.2,.8,.2,1) forwards;
+  filter:drop-shadow(0 18px 35px rgba(0,0,0,.35));
+}
+#mulae-splash .splash-line{
+  width:0;height:3px;border-radius:99px;background:var(--red);
+  animation:splashLine 1.25s .35s ease forwards;
+}
+@keyframes splashLogo{
+  0%{opacity:0;transform:scale(.82) translateY(10px)}
+  70%{opacity:1;transform:scale(1.04) translateY(0)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+@keyframes splashLine{to{width:110px}}
+
+/* ===== YOUTUBE HERO PREVIEW ===== */
+.hero-screen{background:#000 !important;}
+.hero-screen::after{display:none !important;}
+.hero-screen iframe{
+  position:absolute;inset:0;width:100%;height:100%;
+  border:0;display:block;
+}
+.hero-card .play{display:none;}
+
+/* ===== YOUTUBE PORTFOLIO FIX ===== */
+.thumb:has(iframe){
+  height:auto !important;
+  aspect-ratio:16/9;
+  background:#000 !important;
+}
+.thumb:has(iframe)::before,
+.thumb:has(iframe)::after{display:none !important;}
+.thumb iframe{
+  position:absolute;inset:0;width:100%;height:100%;
+  border:0;display:block;
+}
+
+</style>
+</head>
+<body class="is-loading">
+
+<div id="mulae-splash" aria-hidden="true">
+  <div class="splash-inner">
+    <img src="assets/mulae-logo-white.png" alt="Mulae Production">
+    <div class="splash-line"></div>
+  </div>
+</div>
+
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Mulae<span>.</span><small>PRODUCTION</small></a>
+    <div class="nav-links">
+      <a href="#home">BERANDA</a>
+      <a href="https://drive.google.com/drive/folders/1i0joGkdx3FF3HUMSv0ao4Oc3gzm9OoI2?usp=drive_link" target="_blank" rel="noopener noreferrer">PORTOFOLIO</a>
+      <a href="about.html">TENTANG KAMI</a>
+      <a href="#contact">KONTAK</a>
+    </div>
+    <a class="btn btn-red" href="https://api.whatsapp.com/send/?phone=6285850193563&text=Halo%20Mulae%20Production%21%20%F0%9F%91%8B%0A%0ASaya%20tertarik%20dengan%20jasa%20%2AVideo%20Angkatan%2A%20dan%20ingin%20konsultasi%20terlebih%20dahulu.%20%F0%9F%8E%AC%0A%0A%2AInformasi%20Sekolah%3A%2A%0A%F0%9F%8F%AB%20Nama%20Sekolah%3A%0A%F0%9F%93%8D%20Kota%2FKabupaten%3A%0A%F0%9F%8E%93%20Jenjang%3A%20SD%20%2F%20SMP%20%2F%20SMA%20%2F%20SMK%0A%F0%9F%91%A5%20Perkiraan%20Jumlah%20Siswa%3A%0A%0A%2ARencana%20Produksi%3A%2A%0A%F0%9F%93%85%20Rencana%20Tanggal%20Shooting%3A%0A%E2%8F%B1%EF%B8%8F%20Rencana%20Durasi%20Shooting%3A%201%20Hari%20%2F%202%20Hari%20%2F%20Belum%20Tahu%0A%F0%9F%8E%A5%20Konsep%20yang%20Diinginkan%3A%20Cinematic%20%2F%20Fun%20%2F%20Story%20%2F%20Belum%20Tahu%0A%0A%2AKebutuhan%3A%2A%0A%F0%9F%93%B8%20Video%20Saja%20%2F%20Video%20%2B%20Foto%0A%F0%9F%92%B0%20Perkiraan%20Budget%20%28opsional%29%3A%0A%0ASaya%20masih%20belum%20yakin%20mengenai%20konsep%20dan%20paket%20yang%20cocok.%20Boleh%20dibantu%20konsultasi%20dan%20rekomendasi%20paketnya%3F%20%F0%9F%98%8A%0A%0ATerima%20kasih%21">✈ HUBUNGI KAMI</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="kicker"><span>MULAE</span> PRODUCTION</div>
+      <h1>CERITA SATU ANGKATAN,<span class="script">ABADI</span>SELAMANYA.</h1>
+      <p>Kami menangkap setiap momen berharga angkatanmu menjadi video kenangan yang tak terlupakan.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="#video">▶ LIHAT PORTOFOLIO VIDEO</a>
+        <a class="btn btn-outline" href="#photo">○ LIHAT FOTO</a>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="hero-screen">
+        <!-- GANTI VIDEO_ID_KAMU dengan ID video YouTube milikmu -->
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_KAMU?rel=0"
+          title="Preview Video Angkatan Mulae Production"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <img class="sticker s-a float" src="assets/stickers/sticker-05.png" alt="">
+      <img class="sticker s-b float2" src="assets/stickers/sticker-03.png" alt="">
+      <img class="sticker s-c float" src="assets/stickers/sticker-04.png" alt="">
+      <img class="sticker s-d pop" src="assets/stickers/sticker-17.png" alt="">
+      <img class="sticker s-e float2" src="assets/stickers/sticker-07.png" alt="">
+    </div>
+  </div>
+</header>
+
+<section class="section" id="video">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="badge">PORTOFOLIO</span>
+      <h2>Video <em>Angkatan</em></h2>
+      <p>Beberapa karya video yang bisa langsung kamu ganti dengan portfolio asli Mulae.</p>
+    </div>
+
+    <div class="video-stage">
+      <div class="video-track">
+      <article class="video-card reveal">
+
+    <div class="thumb">
+        <iframe
+            src="https://www.youtube.com/embed/O3NJHV2SWFo?rel=0"
+            title="Portfolio Video Angkatan Mulae Production"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="video-info">
+        <h3>Angkatan 2026</h3>
+        <p>School memories • cinematic • friendship</p>
+    </div>
+
+</article>
+        <article class="video-card reveal">
+          <div class="thumb">
+            <!-- GANTI VIDEO_ID_OUR_LAST_CHAPTER dengan ID video YouTube milikmu -->
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_OUR_LAST_CHAPTER?rel=0"
+              title="Our Last Chapter — Mulae Production"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h3>Our Last Chapter</h3>
+            <p>Warm story • graduation • togetherness</p>
+          </div>
+        </article>
+        <article class="video-card reveal">
+          <div class="thumb">
+            <!-- GANTI VIDEO_ID_SEE_YOU_AGAIN dengan ID video YouTube milikmu -->
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_SEE_YOU_AGAIN?rel=0"
+              title="See You Again — Mulae Production"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h3>See You Again</h3>
+            <p>Farewell film • memories • cinematic</p>
+          </div>
+        </article>
+      </div>
+      <div class="slider-stickers">
+        <img class="sticker left float" src="assets/stickers/sticker-16.png" alt="">
+        <img class="sticker right float2" src="assets/stickers/sticker-14.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section photo-section" id="photo">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="badge" style="background:var(--red);color:#fff">PORTOFOLIO</span>
+      <h2>Foto <em>Angkatan</em></h2>
+      <p style="color:#d8e5f8">10 slide portofolio foto. Tombol kiri-kanan dan swipe sudah aktif.</p>
+    </div>
+
+    <div class="photo-slider reveal">
+      <button class="slider-btn prev" aria-label="Foto sebelumnya">‹</button>
+      <div class="photo-frame">
+        <div class="photo-track">
+          <div class="photo-slide"><div class="photo-main"></div><div class="photo-side"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#cbd9ee,#193f78 52%,#ef3340)"></div><div class="photo-side" style="background:linear-gradient(145deg,#f2b36d,#142f5f)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#e7edf6,#3570c9 55%,#0b1b38)"></div><div class="photo-side" style="background:linear-gradient(145deg,#ef3340,#173a79)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#19325c,#6ba4f8 55%,#ffffff)"></div><div class="photo-side" style="background:linear-gradient(145deg,#2a5da8,#101726)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#ef3340,#0d2d64 60%,#f0f4fa)"></div><div class="photo-side" style="background:linear-gradient(145deg,#ffffff,#315b9e)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#9dbdec,#1d4a8d 50%,#07111f)"></div><div class="photo-side" style="background:linear-gradient(145deg,#f4b06a,#ef3340)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#e3ebf7,#0d356d 50%,#ef3340)"></div><div class="photo-side" style="background:linear-gradient(145deg,#0d2a59,#5b8fd5)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#f1a56b,#183e7b 55%,#0b1628)"></div><div class="photo-side" style="background:linear-gradient(145deg,#dfebfa,#2b62ae)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#1a4e98,#ef3340 55%,#ffffff)"></div><div class="photo-side" style="background:linear-gradient(145deg,#0e203e,#2b68bd)"></div></div>
+          <div class="photo-slide"><div class="photo-main" style="background:linear-gradient(145deg,#dbe7f6,#264d8a 55%,#ef3340)"></div><div class="photo-side" style="background:linear-gradient(145deg,#ef3340,#122f60)"></div></div>
+        </div>
+      </div>
+      <button class="slider-btn next" aria-label="Foto berikutnya">›</button>
+      <div class="photo-counter">01 / 10</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="about">
+  <div class="container cta-inner">
+    <img class="decor-left reveal" src="assets/stickers/sticker-01.png" alt="">
+    <div class="cta-copy reveal">
+      <h2>Buat Cerita Angkatanmu <span>Bersama Mulae Production!</span></h2>
+      <p>Kami siap membantu mewujudkan video angkatan yang berkesan, kreatif, dan anti-mainstream.</p>
+      <a class="btn btn-red" href="#contact">◉ HUBUNGI KAMI</a>
+    </div>
+    <img class="decor-right reveal" src="assets/stickers/sticker-10.png" alt="">
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff">Mulae<span>.</span><small>PRODUCTION</small></div>
+        <p>Videography & Photography. Cerita angkatan yang kreatif, berkesan, dan tak terlupakan.</p>
+      </div>
+      <div><h4>MENU</h4><a href="#home">Beranda</a><br><a href="https://drive.google.com/drive/folders/1i0joGkdx3FF3HUMSv0ao4Oc3gzm9OoI2?usp=drive_link" target="_blank" rel="noopener noreferrer">Portfolio</a><br><a href="about.html">Tentang Kami</a><br><a href="#contact">Kontak</a></div>
+      <div><h4>FOLLOW US</h4><p>Instagram<br>YouTube<br>TikTok</p></div>
+      <div><h4>KONTAK</h4><p>Ngawi, Jawa Timur<br>0858-5019-3563<br>musduakh@gmail.com</p></div>
+    </div>
+    <div class="copyright">© 2026 Mulae Production. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+
+/* ===== SPLASH SCREEN ===== */
+window.addEventListener('load',()=>{
+  const splash=document.getElementById('mulae-splash');
+  setTimeout(()=>{
+    if(splash) splash.classList.add('hide');
+    document.body.classList.remove('is-loading');
+  },1800);
+});
+
+const reveal = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('show');reveal.unobserve(e.target)}
+  })
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+
+const track=document.querySelector('.photo-track');
+const counter=document.querySelector('.photo-counter');
+const total=10;
+let current=0;
+function updateSlide(){
+  track.style.transform=`translateX(-${current*100}%)`;
+  counter.textContent=String(current+1).padStart(2,'0')+' / '+total;
+}
+document.querySelector('.next').addEventListener('click',()=>{current=(current+1)%total;updateSlide()});
+document.querySelector('.prev').addEventListener('click',()=>{current=(current-1+total)%total;updateSlide()});
+
+let startX=null;
+track.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+track.addEventListener('touchend',e=>{
+  if(startX===null)return;
+  const dx=e.changedTouches[0].clientX-startX;
+  if(Math.abs(dx)>45){current=dx<0?(current+1)%total:(current-1+total)%total;updateSlide()}
+  startX=null;
+});
+
+document.querySelectorAll('.video-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    card.animate([{transform:'scale(1)'},{transform:'scale(.98)'},{transform:'scale(1)'}],{duration:260});
+  });
+});
+</script>
+</body>
+</html>
